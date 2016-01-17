@@ -1,0 +1,31 @@
+{
+  "name": "lobars",
+  "version": "1.0.0",
+  "description": "lodash functions as handlebars helpers",
+  "main": "index.js",
+  "scripts": {
+    "test": "snazzy --format && mocha"
+  },
+  "repository": "https://github.com/zeke/lobars",
+  "keywords": [
+    "handlebars",
+    "lodash",
+    "helpers"
+  ],
+  "author": "zeke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeke/lobars/issues"
+  },
+  "homepage": "https://github.com/zeke/lobars#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "cheerio": "^0.19.0",
+    "handlebars": "^4.0.5",
+    "mocha": "^2.3.4",
+    "snazzy": "^2.0.1"
+  },
+  "dependencies": {
+    "lodash": "^4.0.0"
+  }
+}

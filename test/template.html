@@ -1,0 +1,43 @@
+<p id="endsWith">
+  {{#endsWith 'abc' 'c'}}
+    abc does end with c
+  {{else}}
+    nope
+  {{/endsWith}}
+</p>
+
+<p id="endsWith-inverse">
+  {{#endsWith 'abc' 'd'}}
+    abc does end with d
+  {{else}}
+    nope
+  {{/endsWith}}
+</p>
+
+<p id="eq">
+  {{#eq page.flavor "delicious"}}
+    They are delicious
+  {{else}}
+    They are NOT delicious
+  {{/eq}}
+</p>
+
+<p id="eq-inverse">
+  {{#eq page.flavor "gross"}}
+    They are gross
+  {{else}}
+    They are NOT gross
+  {{/eq}}
+</p>
+
+<p id="isInteger">
+  {{#isInteger 5}}
+    five is an integer
+  {{else}}
+    five is NOT an integer
+  {{/isInteger}}
+</p>
+
+<p id="lowerCase">
+  {{lowerCase '--Foo-Bar'}}
+</p>
