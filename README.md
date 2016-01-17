@@ -2,6 +2,8 @@
 
 lodash functions as handlebars helpers
 
+This simple library exports an object of helper functions from lodash 4, modified slightly to work properly as handlebars helpers. See [Comparison Helpers](#comparison-helpers) and [String Helpers](#sring-helpers) for a list of available functions.
+
 ## Installation
 
 Download [Node.js](http://nodejs.org) 4 or greater.
