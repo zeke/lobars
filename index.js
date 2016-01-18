@@ -12,7 +12,7 @@ comparisonMethods.forEach(name => {
   lobars[name] = function () {
     var args = Array.prototype.slice.call(arguments)
     var options = args.pop()
-    var result = lodash[name](...args)
+    var result = lodash[name].apply(undefined, args)
     return result ? options.fn(this) : options.inverse(this)
   }
 })
