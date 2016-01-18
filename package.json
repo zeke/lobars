@@ -1,6 +1,6 @@
 {
   "name": "lobars",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "lodash functions as handlebars helpers",
   "main": "index.js",
   "scripts": {
