@@ -4,7 +4,7 @@
   "description": "lodash functions as handlebars helpers",
   "main": "index.js",
   "scripts": {
-    "test": "snazzy --format && mocha"
+    "test": "mocha && standard"
   },
   "repository": "https://github.com/zeke/lobars",
   "keywords": [
@@ -23,9 +23,14 @@
     "cheerio": "^0.19.0",
     "handlebars": "^4.0.5",
     "mocha": "^2.3.4",
-    "snazzy": "^2.0.1"
+    "standard": "^7.0.1"
   },
   "dependencies": {
     "lodash": "^4.0.0"
+  },
+  "standard": {
+    "env": {
+      "mocha": true
+    }
   }
 }
