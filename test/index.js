@@ -1,21 +1,25 @@
-const describe = require('mocha').describe
-const it = require('mocha').it
-const test = require('mocha').it
 const expect = require('chai').expect
-
 const fs = require('fs')
+const path = require('path')
 const cheerio = require('cheerio')
 const handlebars = require('handlebars')
 const lobars = require('..')
 
 handlebars.registerHelper(lobars)
 
-const template = fs.readFileSync(__dirname + '/template.html', 'utf8')
+const template = fs.readFileSync(path.join(__dirname, '/template.html'), 'utf8')
 const context = {
-  page: {flavor: 'delicious'}
+  page: {
+    flavor: 'delicious',
+    keywords: ['alpha', 'bravo', 'charlie']
+  }
 }
 const output = handlebars.compile(template)(context)
 const $ = cheerio.load(output)
+
+const text = function (selector) {
+  return $(selector).text().replace(/\n/g, '').trim()
+}
 
 describe('lobars', function () {
   it('is an object', function () {
@@ -23,22 +27,27 @@ describe('lobars', function () {
   })
 
   describe('methods', function () {
-    test('endsWith', function () {
-      expect($('#endsWith').text()).to.include('abc does end with c')
-      expect($('#endsWith-inverse').text()).to.include('nope')
+    it('endsWith', function () {
+      expect(text('#endsWith')).to.eq('abc does end with c')
+      expect(text('#endsWith-inverse')).to.eq('nope')
     })
 
-    test('eq', function () {
-      expect($('#eq').text()).to.include('They are delicious')
-      expect($('#eq-inverse').text()).to.include('They are NOT gross')
+    it('eq', function () {
+      expect(text('#eq')).to.eq('They are delicious')
+      expect(text('#eq-inverse')).to.eq('They are NOT gross')
     })
 
-    test('isInteger', function () {
-      expect($('#isInteger').text()).to.include('five is an integer')
+    it('isInteger', function () {
+      expect(text('#isInteger')).to.eq('five is an integer')
     })
 
-    test('lowerCase', function () {
-      expect($('#lowerCase').text()).to.include('foo bar')
+    it('lowerCase', function () {
+      expect(text('#lowerCase')).to.eq('foo bar')
+    })
+
+    it('includes', function () {
+      expect(text('#includes')).to.eq('keywords include alpha')
+      expect(text('#includes-inverse')).to.eq('keywords do not include zulu')
     })
   })
 })

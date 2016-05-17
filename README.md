@@ -29,6 +29,7 @@ These functions all return `true` or `false`:
 - [eq](https://lodash.com/docs#eq)
 - [gt](https://lodash.com/docs#gt)
 - [gte](https://lodash.com/docs#gte)
+- [includes](https://lodash.com/docs#includes)
 - [isArguments](https://lodash.com/docs#isArguments)
 - [isArray](https://lodash.com/docs#isArray)
 - [isArrayLike](https://lodash.com/docs#isArrayLike)

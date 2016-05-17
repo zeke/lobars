@@ -41,3 +41,19 @@
 <p id="lowerCase">
   {{lowerCase '--Foo-Bar'}}
 </p>
+
+<p id="includes">
+  {{#includes page.keywords 'alpha'}}
+    keywords include alpha
+  {{else}}
+    keywords do not include alpha
+  {{/includes}}
+</p>
+
+<p id="includes-inverse">
+  {{#includes page.keywords 'zulu'}}
+    keywords include zulu
+  {{else}}
+    keywords do not include zulu
+  {{/includes}}
+</p>
