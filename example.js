@@ -1,4 +1,4 @@
 const handlebars = require('handlebars')
-const lobars = require('./')
+const lobars = require('.')
 
 handlebars.registerHelper(lobars)
